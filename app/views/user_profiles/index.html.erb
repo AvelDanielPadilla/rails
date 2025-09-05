@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <th>Full name</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Email</th>
+      <th>Details</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th><%= link_to 'New User', new_user_profiles_path  %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_profiles.each do |user_profile| %>
+      <tr>
+        <td><%= user_profile.fullname %> </td>
+        <td><%= user_profile.username %> </td>
+        <td><%= user_profile.password_digest %> </td>
+        <td><%= user_profile.email %> </td>
+        <td><%= link_to 'Show', user_profile_path(user_profile.id) %> </td>
+        <td><%= link_to 'Edit', edit_user_profile_path(user_profile.id) %> </td>
+        <td><%= button_to 'Delete', delete_user_profile_path(user_profile.id), method: :delete %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

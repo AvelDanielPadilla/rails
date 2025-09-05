@@ -1,0 +1,22 @@
+<%= form_with scope: :article, url: update_article_path(@article.id), method: :put, local: true do |f| %>
+
+<p>
+  <% if @article.errors.any? %>
+    <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :body %><br/>
+  <%= f.text_field :body %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>

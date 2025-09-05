@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>Posted by-</th>
+      <th>Comment</th>   
+      <th>Edit</th>
+      <th>Delete</th>   
+      <th><%= link_to 'Add New Comment', new_comments_path  %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.name %> </td>
+        <td><%= comment.comments %> </td>
+        <td><%= link_to 'Edit', edit_comment_path(comment.id) %> </td>
+        <td><%= button_to 'Delete', delete_comment_path(comment.id), method: :delete %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

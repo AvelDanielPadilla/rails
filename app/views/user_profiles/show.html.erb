@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Username</th>
+      <th>Password</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>  
+        <td><%= @user_profile.fullname %> </td>
+        <td><%= @user_profile.username %> </td>
+        <td><%= @user_profile.password_digest %> </td>
+        <td><%= @user_profile.email %> </td>
+      </tr>
+  </tbody>
+</table>
+
